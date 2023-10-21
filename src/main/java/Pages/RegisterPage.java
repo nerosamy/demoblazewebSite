@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPage {
     private WebDriver driver;
+
+    //Locate registration page elements
     @FindBy(id="signin2")
     WebElement navigateToSignupBtn;
 
@@ -21,7 +23,6 @@ public class RegisterPage {
     @FindBy(id="nameofuser")
     public WebElement welcomeText;
 
-//    LoginPage loginPageObj = new LoginPage(driver);
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
@@ -34,7 +35,8 @@ public class RegisterPage {
         navigateToSignupBtn.click();
     }
 
-    public void registerNewUser(String username , String pass) {
+    public void registerNewUser(String username , String pass) throws InterruptedException {
+        Thread.sleep(10000);
         usernameTextInput.sendKeys(username);
         passTextInput.sendKeys(pass);
 

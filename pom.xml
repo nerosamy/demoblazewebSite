@@ -8,13 +8,22 @@
     <artifactId>openbrowserproject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+
     <dependencies>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.11.0</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-api -->
         <dependency>
@@ -22,8 +31,6 @@
             <artifactId>selenium-api</artifactId>
             <version>4.11.0</version>
         </dependency>
-
-
 
         <dependency>
             <groupId>org.testng</groupId>
@@ -33,16 +40,13 @@
         </dependency>
 
 
-
-
-
-
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.2</version>
             <scope>test</scope>
         </dependency>
+
 
 
 

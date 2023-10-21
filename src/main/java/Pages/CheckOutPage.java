@@ -13,9 +13,9 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 
-public class CheckOutPage {
+public class CheckOutPage extends MainPage{
     private WebDriver driver;
-    WebDriverWait wait;
+
 
     //Define Checkout page Element
     @FindBy(xpath = "//*[@id=\"tbodyid\"]/div[1]/div/div/h4/a")
@@ -55,12 +55,9 @@ public class CheckOutPage {
 
 
     public CheckOutPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        Duration timeout = Duration.ofSeconds(30);
-
-        // Initialize WebDriverWait with the Duration
-        wait = new WebDriverWait(driver, timeout);
 
     }
 
@@ -101,13 +98,5 @@ public class CheckOutPage {
 
     }
 
-    public void handleAlert() {
-        Alert alert = driver.switchTo().alert(); // Switch to the alert
-        String alertText = alert.getText(); // Get the text of the alert
-        System.out.println("Alert Text: " + alertText);
 
-        // Accept the alert (Click OK)
-        alert.accept();
-
-    }
 }
